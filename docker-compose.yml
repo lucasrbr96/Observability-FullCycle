@@ -58,6 +58,18 @@ services:
     networks: 
       - observability
 
+  apm:
+    image: docker.elastic.co/apm/apm-server-oss:7.13.0
+    container_name: apm
+    user: root
+    volumes:      
+    - ./apm/apm-server.yml:/usr/share/apm-server/apm-server.yml:z
+    ports:
+      - "8200:8200"
+    restart: on-failure
+    networks: 
+      - observability
+
 networks:
   observability:
-     driver: bridge
+    driver: bridge

@@ -4,7 +4,7 @@ heartbeat.monitors:
   urls:
     - http://elasticsearch:9200
     - http://kibana:5601
-    - http://app:8000
+    - http://app:8080
 
 - type: icmp
   schedule: '@every 5s'
